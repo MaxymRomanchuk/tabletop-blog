@@ -1,0 +1,49 @@
+{
+    "title": "Tabletop games blog",
+    "header": {
+        "home": "Home",
+        "signin": "Sign in",
+        "logout": "Log out",
+        "profile": "Profile"
+    },
+    "signin": {
+        "title": "Please sign up",
+        "emailField": "Email address",
+        "passwordField": "Password",
+        "submit": "Sign in",
+        "link": "Already registered? Sign in"
+    },
+    "signup": {
+        "title": "Sign up",
+        "submit": "Sign up",
+        "link": "Do not have account yet? Sign up"
+    },
+    "table": {
+        "id": "Shortened link",
+        "url": "URL",
+        "description": "Description",
+        "actions": "Actions"
+    },
+    "modal": {
+        "title": "Add post",
+        "saveBtn": "Save",
+        "cancelBtn": "Cancel",
+        "titleField": "Post title",
+        "videoUrlField": "YouTube link (optional)",
+        "imageUrlField": "Image link",
+        "contentField": "Post content"
+    },
+    "profile": {
+        "title": "This is you profile",
+        "description": "Here you can create and delete your posts",
+        "createBtn": "Create post",
+        "deleteBtn": "Delete",
+        "linkBtn": "View"
+    },
+    "home": {
+        "title": "Welcome to tabletop games reviews place!",
+        "subtitle": "Cozy blog that posts reviews and nothing more.",
+        "btn": "Sign in now",
+        "footer": "Built with Vue 3 by Max `"
+    }
+}

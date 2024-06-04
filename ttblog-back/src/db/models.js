@@ -11,6 +11,7 @@ const commentSchema = new mongoose.Schema({
 const postSchema = new mongoose.Schema({
   id: String,
   title: String,
+  userId: String,
   imageUrl: String,
   videoUrl: String,
   content: String,
