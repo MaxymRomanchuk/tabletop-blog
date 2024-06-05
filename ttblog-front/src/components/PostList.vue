@@ -35,6 +35,6 @@
 <template>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
         <div class="mx-auto text-center" v-if="postList.data.length === 0">No posts yet...</div>
-        <PostItem v-for="i in postList.data" :id="i.id" :title="i.title" :content="i.content" :image="i.imageUrl" :video="i.videoUrl" />
+        <PostItem v-for="i in postList.data" :use-profile="useProfile" :id="i.id" :title="i.title" :content="i.content" :image="i.imageUrl" :video="i.videoUrl" />
     </div>
 </template>

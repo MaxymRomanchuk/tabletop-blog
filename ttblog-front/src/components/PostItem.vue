@@ -7,7 +7,6 @@
     import axios from 'axios';
     
     const { t } = useI18n();
-    const router = useRouter();
     const store = useCounterStore();
 
     const props = defineProps({
@@ -16,6 +15,7 @@
         content: String,
         image: String,
         video: String,
+        useProfile: Boolean,
     })
 
     async function deletePost() {
@@ -30,14 +30,14 @@
 <template>
     <div class="col">
         <div class="card shadow-sm h-100">
-            <div class="card-img-top" width="200" height="200">
+            <div width="200" height="300">
                 <RouterLink :to="Translator.i18nRoute({ path: `post/${props.id}`})">
-                    <img class="bd-placeholder-img card-img-top" :src="props.image">
+                    <img class="bd-placeholder-img card-img-top" :src="props.image" width="200" height="300">
                 </RouterLink>
             </div>
             <div class="card-body d-flex flex-column justify-content-between">
                 <p class="card-text text-black fw-bolder">{{ props.title }}</p>
-                <button type="button" class="btn btn-block btn-outline-danger" @click="deletePost">{{ t('profile.deleteBtn') }}</button>
+                <button v-if="useProfile" type="button" class="btn btn-block btn-outline-danger" @click="deletePost">{{ t('profile.deleteBtn') }}</button>
             </div>
         </div>
     </div>

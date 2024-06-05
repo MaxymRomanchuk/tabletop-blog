@@ -20,7 +20,7 @@ async function createPost({ token, title, content, imageUrl, videoUrl }) {
 }
 
 async function listPosts(userId) {
-  return Post.find(userId ? { userId } : {}, { content: 0 }).sort({ ts: 1 }).limit(10);
+  return Post.find(userId ? { userId } : {}, { content: 0 }).sort({ ts: -1 }).limit(10);
 }
 
 async function getPost(postId) {
@@ -32,7 +32,7 @@ async function getPost(postId) {
 
 async function deletePost(token, postId) {
   const userId = await validateToken(token);
-  const post = await Post.findOne({ id, userId });
+  const post = await Post.findOne({ id: postId, userId });
   
   if(!post) {
     throw new Error('Invalid Post ID');

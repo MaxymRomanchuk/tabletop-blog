@@ -45,7 +45,6 @@
                 class="mx-auto"
                 v-if="post.data.videoUrl"
                 :src="post.data.videoUrl"
-                :width="Math.min(640, window.innerWidth)"
                 ref="youtube"
             />
             <VMarkdownView

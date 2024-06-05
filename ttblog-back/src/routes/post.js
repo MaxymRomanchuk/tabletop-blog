@@ -44,7 +44,7 @@ router.delete('/:id', (req, res) => {
   return deletePost(
     req.query.token, 
     req.params.id
-  ).then(res => {
+  ).then(() => {
     res.status(200);
     res.json({ ok: true });
   }).catch(e => {
