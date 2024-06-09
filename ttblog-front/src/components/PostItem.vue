@@ -2,7 +2,7 @@
     //@ts-ignore
     import { useI18n } from 'vue-i18n'
     import { useCounterStore } from '@/stores/counter';
-    import { RouterLink, useRouter } from 'vue-router';
+    import { RouterLink } from 'vue-router';
     import Translator from '@/i18n/controller';
     import axios from 'axios';
     
@@ -31,7 +31,7 @@
     <div class="col">
         <div class="card shadow-sm h-100">
             <div width="200" height="300">
-                <RouterLink :to="Translator.i18nRoute({ path: `post/${props.id}`})">
+                <RouterLink :to="Translator.i18nRoute({ name: `post`, params: { id: props.id }})">
                     <img class="bd-placeholder-img card-img-top" :src="props.image" width="200" height="300">
                 </RouterLink>
             </div>

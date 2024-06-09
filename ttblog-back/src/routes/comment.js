@@ -7,7 +7,10 @@ router.get('/', async (req, res) => {
   return listComments(req.query.post)
     .then(comments => {
       res.status(200);
-      res.json(comments);
+      res.json(comments.map(comment => ({
+        ...comment,
+        user: comment.user[0].email.split('@')[0],
+      })));
     })
     .catch(e => {
       res.status(400);

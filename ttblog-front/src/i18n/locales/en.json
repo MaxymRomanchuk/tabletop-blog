@@ -45,5 +45,10 @@
         "subtitle": "Cozy blog that posts reviews and nothing more.",
         "btn": "Sign in now",
         "footer": "Built with Vue 3 by Max `"
+    },
+    "post": {
+        "commentSection": "Comments:",
+        "commentTitle": "Write your opinion about this post:",
+        "commentSave": "Save"
     }
 }

@@ -1,8 +1,8 @@
-<script setup>
+<script setup lang="ts">
     import axios from 'axios';
     import { ref } from 'vue';
     import { Modal } from 'bootstrap';
-    import { useI18n } from 'vue-i18n'
+    import { useI18n } from 'vue-i18n';
     import { VMarkdownEditor } from 'vue3-markdown';
     import { useCounterStore } from '@/stores/counter';
     import 'vue3-markdown/dist/style.css';

@@ -17,10 +17,24 @@ async function createComment({ token, postId, content }) {
 }
 
 async function listComments(postId) {
-  if(!postId) {
+  if(!postId || postId === 'undefined') {
     throw new Error('Post ID is required!');
   }
-  return Comment.find({ postId }).sort({ ts: 1 }).limit(100);
+  return Comment.aggregate([
+    {
+      $match: {
+        postId
+      }
+    },
+    {
+      $lookup: {
+        from: 'users',
+        localField: 'userId',
+        foreignField: 'id',
+        as: 'user'
+      }
+    }
+  ]).sort({ ts: -1 }).limit(100);
 }
 
 module.exports = {

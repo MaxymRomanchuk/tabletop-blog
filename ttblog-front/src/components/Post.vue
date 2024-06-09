@@ -1,9 +1,11 @@
-<script setup>
+<script setup lang="ts">
     import { reactive } from 'vue';
     import { useRoute } from 'vue-router';
     import { VMarkdownView } from 'vue3-markdown';
     import 'vue3-markdown/dist/style.css';
     import YouTube from 'vue3-youtube';
+    import CommentEditor from '@/components/CommentEditor.vue';
+    import CommentsList from '@/components/CommentsList.vue';
 
     const route = useRoute();
 
@@ -39,7 +41,7 @@
             </div>
         </div>
     </section>
-    <section class="row py-5 px-lg-5 main-bg">
+    <section class="py-5 px-lg-5 main-bg d-flex flex-column">
         <div class="col-lg-8 col-md-10 col-11 mx-auto">
             <YouTube
                 class="mx-auto"
@@ -48,21 +50,25 @@
                 ref="youtube"
             />
             <VMarkdownView
-                id="markdown-block"
-                mode="light"
+                id="post-content"
+                class="p-2 mt-4"
                 :content="post.data.content"
             />
         </div>
+        <CommentsList  :post="route.params.id"/>
+        <CommentEditor :post="route.params.id"/>
     </section>
 </template>
 
 <style>
+    #post-content {
+        background-color: #fffbf5 !important;
+        border: 2px solid #b2b2b2;
+        border-radius: 10px 10px 10px 10px;
+    }
+
     #post-header {
         background-size: cover;
         background-position: center;
-    };
-
-    #markdown-block {
-        background-color: #fdf5e5;
     };
 </style>
